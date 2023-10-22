@@ -6,16 +6,18 @@ using UnityEngine;
 public class OSSniper : OSWeapon
 {
     [Header("OSSniper")]
-    public string weaponName;
 
+    public float alternateWindupDuration;
+
+    public float projectileSpeed;
 
     public override void PrimaryFire()
     {
-        throw new System.NotImplementedException();
+        // Fire a Hit-Scan 
     }
     public override void AlternateFire()
     {
-        throw new System.NotImplementedException();
+
     }
 }
 

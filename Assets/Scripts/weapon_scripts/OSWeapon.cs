@@ -10,11 +10,11 @@ using UnityEngine;
 public abstract class OSWeapon
 {
     [Header("OSWeapon")]
-    public string primaryCodename;
+    public string weaponName;
+
     public int primaryBaseDamage;
     public float primaryBaseRange;
 
-    public string alternateCodename;
     public int alternateBaseDamage;
     public float alternateBaseRange;
 
