@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShotController : MonoBehaviour
+public class ShotController_legacy : MonoBehaviour
 {
-    public static ShotController _shotControl;
-    public static ShotController GetShotControl { get { return _shotControl; } }
+    public static ShotController_legacy _shotControl;
+    public static ShotController_legacy GetShotControl { get { return _shotControl; } }
 
     #region ## PARAMETERS ##
     private PlayerInputActions playerInputActions;
@@ -26,7 +26,7 @@ public class ShotController : MonoBehaviour
     public LineRenderer AimLine;
     public GameObject ImpactBurst;
     public GameObject ImpactPierceBurst;
-    private MovementController moveControl;
+    private MovementController_legacy moveControl;
     private AltShotController altControl;
     private AudioManager audioManager;
     private UI_Manager uiControl;
@@ -97,12 +97,12 @@ public class ShotController : MonoBehaviour
         _shotControl = this;
 
         playerInputActions = new PlayerInputActions();
-        playerInputActions.Player.Enable();
+        playerInputActions.PlayerInp_legacy.Enable();
     }
 
     private void Start()
     {
-        moveControl = MovementController.GetMoveController;
+        moveControl = MovementController_legacy.GetMoveController;
         altControl = AltShotController.GetAltControl;
         audioManager = AudioManager.GetAudioManager;
         uiControl = UI_Manager.GetUIManager;
@@ -186,8 +186,8 @@ public class ShotController : MonoBehaviour
         else
         {
             // Controller/Non Mouse Controls
-            Vector2 aimVector = playerInputActions.Player.Aim.ReadValue<Vector2>();
-            Vector2 moveVector = playerInputActions.Player.Move.ReadValue<Vector2>();
+            Vector2 aimVector = playerInputActions.PlayerInp_legacy.Aim.ReadValue<Vector2>();
+            Vector2 moveVector = playerInputActions.PlayerInp_legacy.Move.ReadValue<Vector2>();
 
             if (aimVector.Equals(Vector2.zero))
             {

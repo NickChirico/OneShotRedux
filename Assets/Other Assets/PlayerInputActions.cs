@@ -15,7 +15,7 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
     ""name"": ""PlayerInputActions"",
     ""maps"": [
         {
-            ""name"": ""Player"",
+            ""name"": ""PlayerInp_legacy"",
             ""id"": ""3cbb6e20-b5a7-4449-9015-8d4ea7f0363f"",
             ""actions"": [
                 {
@@ -313,6 +313,268 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Player"",
+            ""id"": ""973a8af7-8ade-47e7-b37c-03dcbbab1fe2"",
+            ""actions"": [
+                {
+                    ""name"": ""Move"",
+                    ""type"": ""Value"",
+                    ""id"": ""78f91e6d-3305-4abb-8856-ae42c531b6b0"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Aim"",
+                    ""type"": ""Value"",
+                    ""id"": ""dbbcf42a-8785-46f0-b4a1-c76e3b38d2ca"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Fire"",
+                    ""type"": ""Button"",
+                    ""id"": ""69b6119e-fed9-41da-b3b2-6d1aa58d290e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Fire2"",
+                    ""type"": ""Button"",
+                    ""id"": ""e06fc319-1160-4632-a33a-45accfa5b4c3"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Dash"",
+                    ""type"": ""Button"",
+                    ""id"": ""30d6d21e-c52c-4663-9732-2731ac7b5696"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""GameMenu"",
+                    ""type"": ""Button"",
+                    ""id"": ""699bf5dd-1263-4197-9793-e9406231f371"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""SystemPause"",
+                    ""type"": ""Button"",
+                    ""id"": ""6d90b60c-2187-4b54-a0da-b5c9fc289ba1"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": ""Keyboard"",
+                    ""id"": ""8fcf1e36-7d72-4cb0-8c21-9a2b6659c0b8"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""63dea2d3-0f36-47c2-9599-7d115648716b"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardMouse"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""ef8599a6-a3f9-46e8-b27e-33bc15b6f9f5"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardMouse"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""18c393d4-fcf3-47c0-8c8e-df396cc68cad"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardMouse"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""ee708f1b-969f-422a-915b-387a0e92dbb8"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardMouse"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""668f34f6-75bd-490d-9455-ba6dbb9b648f"",
+                    ""path"": ""<Gamepad>/leftStick"",
+                    ""interactions"": """",
+                    ""processors"": ""StickDeadzone,NormalizeVector2"",
+                    ""groups"": ""XBOX_Controller"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e767bfb3-541b-41c2-8423-ac72a747055f"",
+                    ""path"": ""<Mouse>/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardMouse"",
+                    ""action"": ""Aim"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3616857b-bedc-4622-8f7d-845274d1e5f1"",
+                    ""path"": ""<Gamepad>/rightStick"",
+                    ""interactions"": """",
+                    ""processors"": ""NormalizeVector2"",
+                    ""groups"": ""XBOX_Controller"",
+                    ""action"": ""Aim"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b4db23b6-81a9-482d-a5f3-715e93f374c0"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": ""Hold"",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardMouse"",
+                    ""action"": ""Fire"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ad7e3664-3b85-470c-b186-4852dcd1dbe4"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""XBOX_Controller"",
+                    ""action"": ""Fire"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d6f4163f-f74e-4fa5-8e79-e39091d7a078"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardMouse"",
+                    ""action"": ""Fire2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""070ffb35-c736-4d98-881e-fe02f521b264"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""XBOX_Controller"",
+                    ""action"": ""Fire2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7c1e5d23-1865-40ac-9fb7-2d220fcb9856"",
+                    ""path"": ""<Keyboard>/leftShift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardMouse"",
+                    ""action"": ""Dash"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""89d64388-dac8-416e-a5ec-146e0f53a4fa"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""XBOX_Controller"",
+                    ""action"": ""Dash"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""425028f8-f994-4a8a-98ac-e14561dfd61b"",
+                    ""path"": ""<Keyboard>/i"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardMouse"",
+                    ""action"": ""GameMenu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2d8620b8-963d-42f0-8e9f-36709ad9b8ac"",
+                    ""path"": ""<Gamepad>/select"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""XBOX_Controller"",
+                    ""action"": ""GameMenu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a50f5458-16b8-4bba-9838-d8297c8887e6"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardMouse"",
+                    ""action"": ""SystemPause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1232bbe3-fe0d-4382-be9f-7265a4b658f5"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""XBOX_Controller"",
+                    ""action"": ""SystemPause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -345,17 +607,26 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
         }
     ]
 }");
+        // PlayerInp_legacy
+        m_PlayerInp_legacy = asset.FindActionMap("PlayerInp_legacy", throwIfNotFound: true);
+        m_PlayerInp_legacy_Move = m_PlayerInp_legacy.FindAction("Move", throwIfNotFound: true);
+        m_PlayerInp_legacy_Aim = m_PlayerInp_legacy.FindAction("Aim", throwIfNotFound: true);
+        m_PlayerInp_legacy_Aim_Mouse = m_PlayerInp_legacy.FindAction("Aim_Mouse", throwIfNotFound: true);
+        m_PlayerInp_legacy_Fire = m_PlayerInp_legacy.FindAction("Fire", throwIfNotFound: true);
+        m_PlayerInp_legacy_Fire2 = m_PlayerInp_legacy.FindAction("Fire2", throwIfNotFound: true);
+        m_PlayerInp_legacy_Reload = m_PlayerInp_legacy.FindAction("Reload", throwIfNotFound: true);
+        m_PlayerInp_legacy_Menu = m_PlayerInp_legacy.FindAction("Menu", throwIfNotFound: true);
+        m_PlayerInp_legacy_Dash = m_PlayerInp_legacy.FindAction("Dash", throwIfNotFound: true);
+        m_PlayerInp_legacy_Pause = m_PlayerInp_legacy.FindAction("Pause", throwIfNotFound: true);
         // Player
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
         m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
         m_Player_Aim = m_Player.FindAction("Aim", throwIfNotFound: true);
-        m_Player_Aim_Mouse = m_Player.FindAction("Aim_Mouse", throwIfNotFound: true);
         m_Player_Fire = m_Player.FindAction("Fire", throwIfNotFound: true);
         m_Player_Fire2 = m_Player.FindAction("Fire2", throwIfNotFound: true);
-        m_Player_Reload = m_Player.FindAction("Reload", throwIfNotFound: true);
-        m_Player_Menu = m_Player.FindAction("Menu", throwIfNotFound: true);
         m_Player_Dash = m_Player.FindAction("Dash", throwIfNotFound: true);
-        m_Player_Pause = m_Player.FindAction("Pause", throwIfNotFound: true);
+        m_Player_GameMenu = m_Player.FindAction("GameMenu", throwIfNotFound: true);
+        m_Player_SystemPause = m_Player.FindAction("SystemPause", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -402,69 +673,69 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
         asset.Disable();
     }
 
-    // Player
-    private readonly InputActionMap m_Player;
-    private IPlayerActions m_PlayerActionsCallbackInterface;
-    private readonly InputAction m_Player_Move;
-    private readonly InputAction m_Player_Aim;
-    private readonly InputAction m_Player_Aim_Mouse;
-    private readonly InputAction m_Player_Fire;
-    private readonly InputAction m_Player_Fire2;
-    private readonly InputAction m_Player_Reload;
-    private readonly InputAction m_Player_Menu;
-    private readonly InputAction m_Player_Dash;
-    private readonly InputAction m_Player_Pause;
-    public struct PlayerActions
+    // PlayerInp_legacy
+    private readonly InputActionMap m_PlayerInp_legacy;
+    private IPlayerInp_legacyActions m_PlayerInp_legacyActionsCallbackInterface;
+    private readonly InputAction m_PlayerInp_legacy_Move;
+    private readonly InputAction m_PlayerInp_legacy_Aim;
+    private readonly InputAction m_PlayerInp_legacy_Aim_Mouse;
+    private readonly InputAction m_PlayerInp_legacy_Fire;
+    private readonly InputAction m_PlayerInp_legacy_Fire2;
+    private readonly InputAction m_PlayerInp_legacy_Reload;
+    private readonly InputAction m_PlayerInp_legacy_Menu;
+    private readonly InputAction m_PlayerInp_legacy_Dash;
+    private readonly InputAction m_PlayerInp_legacy_Pause;
+    public struct PlayerInp_legacyActions
     {
         private @PlayerInputActions m_Wrapper;
-        public PlayerActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Move => m_Wrapper.m_Player_Move;
-        public InputAction @Aim => m_Wrapper.m_Player_Aim;
-        public InputAction @Aim_Mouse => m_Wrapper.m_Player_Aim_Mouse;
-        public InputAction @Fire => m_Wrapper.m_Player_Fire;
-        public InputAction @Fire2 => m_Wrapper.m_Player_Fire2;
-        public InputAction @Reload => m_Wrapper.m_Player_Reload;
-        public InputAction @Menu => m_Wrapper.m_Player_Menu;
-        public InputAction @Dash => m_Wrapper.m_Player_Dash;
-        public InputAction @Pause => m_Wrapper.m_Player_Pause;
-        public InputActionMap Get() { return m_Wrapper.m_Player; }
+        public PlayerInp_legacyActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Move => m_Wrapper.m_PlayerInp_legacy_Move;
+        public InputAction @Aim => m_Wrapper.m_PlayerInp_legacy_Aim;
+        public InputAction @Aim_Mouse => m_Wrapper.m_PlayerInp_legacy_Aim_Mouse;
+        public InputAction @Fire => m_Wrapper.m_PlayerInp_legacy_Fire;
+        public InputAction @Fire2 => m_Wrapper.m_PlayerInp_legacy_Fire2;
+        public InputAction @Reload => m_Wrapper.m_PlayerInp_legacy_Reload;
+        public InputAction @Menu => m_Wrapper.m_PlayerInp_legacy_Menu;
+        public InputAction @Dash => m_Wrapper.m_PlayerInp_legacy_Dash;
+        public InputAction @Pause => m_Wrapper.m_PlayerInp_legacy_Pause;
+        public InputActionMap Get() { return m_Wrapper.m_PlayerInp_legacy; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
         public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(PlayerActions set) { return set.Get(); }
-        public void SetCallbacks(IPlayerActions instance)
+        public static implicit operator InputActionMap(PlayerInp_legacyActions set) { return set.Get(); }
+        public void SetCallbacks(IPlayerInp_legacyActions instance)
         {
-            if (m_Wrapper.m_PlayerActionsCallbackInterface != null)
+            if (m_Wrapper.m_PlayerInp_legacyActionsCallbackInterface != null)
             {
-                @Move.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMove;
-                @Move.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMove;
-                @Move.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMove;
-                @Aim.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAim;
-                @Aim.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAim;
-                @Aim.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAim;
-                @Aim_Mouse.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAim_Mouse;
-                @Aim_Mouse.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAim_Mouse;
-                @Aim_Mouse.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAim_Mouse;
-                @Fire.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire;
-                @Fire.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire;
-                @Fire.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire;
-                @Fire2.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire2;
-                @Fire2.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire2;
-                @Fire2.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire2;
-                @Reload.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnReload;
-                @Reload.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnReload;
-                @Reload.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnReload;
-                @Menu.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMenu;
-                @Menu.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMenu;
-                @Menu.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMenu;
-                @Dash.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDash;
-                @Dash.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDash;
-                @Dash.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDash;
-                @Pause.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPause;
-                @Pause.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPause;
-                @Pause.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPause;
+                @Move.started -= m_Wrapper.m_PlayerInp_legacyActionsCallbackInterface.OnMove;
+                @Move.performed -= m_Wrapper.m_PlayerInp_legacyActionsCallbackInterface.OnMove;
+                @Move.canceled -= m_Wrapper.m_PlayerInp_legacyActionsCallbackInterface.OnMove;
+                @Aim.started -= m_Wrapper.m_PlayerInp_legacyActionsCallbackInterface.OnAim;
+                @Aim.performed -= m_Wrapper.m_PlayerInp_legacyActionsCallbackInterface.OnAim;
+                @Aim.canceled -= m_Wrapper.m_PlayerInp_legacyActionsCallbackInterface.OnAim;
+                @Aim_Mouse.started -= m_Wrapper.m_PlayerInp_legacyActionsCallbackInterface.OnAim_Mouse;
+                @Aim_Mouse.performed -= m_Wrapper.m_PlayerInp_legacyActionsCallbackInterface.OnAim_Mouse;
+                @Aim_Mouse.canceled -= m_Wrapper.m_PlayerInp_legacyActionsCallbackInterface.OnAim_Mouse;
+                @Fire.started -= m_Wrapper.m_PlayerInp_legacyActionsCallbackInterface.OnFire;
+                @Fire.performed -= m_Wrapper.m_PlayerInp_legacyActionsCallbackInterface.OnFire;
+                @Fire.canceled -= m_Wrapper.m_PlayerInp_legacyActionsCallbackInterface.OnFire;
+                @Fire2.started -= m_Wrapper.m_PlayerInp_legacyActionsCallbackInterface.OnFire2;
+                @Fire2.performed -= m_Wrapper.m_PlayerInp_legacyActionsCallbackInterface.OnFire2;
+                @Fire2.canceled -= m_Wrapper.m_PlayerInp_legacyActionsCallbackInterface.OnFire2;
+                @Reload.started -= m_Wrapper.m_PlayerInp_legacyActionsCallbackInterface.OnReload;
+                @Reload.performed -= m_Wrapper.m_PlayerInp_legacyActionsCallbackInterface.OnReload;
+                @Reload.canceled -= m_Wrapper.m_PlayerInp_legacyActionsCallbackInterface.OnReload;
+                @Menu.started -= m_Wrapper.m_PlayerInp_legacyActionsCallbackInterface.OnMenu;
+                @Menu.performed -= m_Wrapper.m_PlayerInp_legacyActionsCallbackInterface.OnMenu;
+                @Menu.canceled -= m_Wrapper.m_PlayerInp_legacyActionsCallbackInterface.OnMenu;
+                @Dash.started -= m_Wrapper.m_PlayerInp_legacyActionsCallbackInterface.OnDash;
+                @Dash.performed -= m_Wrapper.m_PlayerInp_legacyActionsCallbackInterface.OnDash;
+                @Dash.canceled -= m_Wrapper.m_PlayerInp_legacyActionsCallbackInterface.OnDash;
+                @Pause.started -= m_Wrapper.m_PlayerInp_legacyActionsCallbackInterface.OnPause;
+                @Pause.performed -= m_Wrapper.m_PlayerInp_legacyActionsCallbackInterface.OnPause;
+                @Pause.canceled -= m_Wrapper.m_PlayerInp_legacyActionsCallbackInterface.OnPause;
             }
-            m_Wrapper.m_PlayerActionsCallbackInterface = instance;
+            m_Wrapper.m_PlayerInp_legacyActionsCallbackInterface = instance;
             if (instance != null)
             {
                 @Move.started += instance.OnMove;
@@ -497,6 +768,87 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
             }
         }
     }
+    public PlayerInp_legacyActions @PlayerInp_legacy => new PlayerInp_legacyActions(this);
+
+    // Player
+    private readonly InputActionMap m_Player;
+    private IPlayerActions m_PlayerActionsCallbackInterface;
+    private readonly InputAction m_Player_Move;
+    private readonly InputAction m_Player_Aim;
+    private readonly InputAction m_Player_Fire;
+    private readonly InputAction m_Player_Fire2;
+    private readonly InputAction m_Player_Dash;
+    private readonly InputAction m_Player_GameMenu;
+    private readonly InputAction m_Player_SystemPause;
+    public struct PlayerActions
+    {
+        private @PlayerInputActions m_Wrapper;
+        public PlayerActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Move => m_Wrapper.m_Player_Move;
+        public InputAction @Aim => m_Wrapper.m_Player_Aim;
+        public InputAction @Fire => m_Wrapper.m_Player_Fire;
+        public InputAction @Fire2 => m_Wrapper.m_Player_Fire2;
+        public InputAction @Dash => m_Wrapper.m_Player_Dash;
+        public InputAction @GameMenu => m_Wrapper.m_Player_GameMenu;
+        public InputAction @SystemPause => m_Wrapper.m_Player_SystemPause;
+        public InputActionMap Get() { return m_Wrapper.m_Player; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(PlayerActions set) { return set.Get(); }
+        public void SetCallbacks(IPlayerActions instance)
+        {
+            if (m_Wrapper.m_PlayerActionsCallbackInterface != null)
+            {
+                @Move.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMove;
+                @Move.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMove;
+                @Move.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMove;
+                @Aim.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAim;
+                @Aim.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAim;
+                @Aim.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAim;
+                @Fire.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire;
+                @Fire.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire;
+                @Fire.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire;
+                @Fire2.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire2;
+                @Fire2.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire2;
+                @Fire2.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire2;
+                @Dash.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDash;
+                @Dash.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDash;
+                @Dash.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDash;
+                @GameMenu.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnGameMenu;
+                @GameMenu.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnGameMenu;
+                @GameMenu.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnGameMenu;
+                @SystemPause.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSystemPause;
+                @SystemPause.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSystemPause;
+                @SystemPause.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSystemPause;
+            }
+            m_Wrapper.m_PlayerActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Move.started += instance.OnMove;
+                @Move.performed += instance.OnMove;
+                @Move.canceled += instance.OnMove;
+                @Aim.started += instance.OnAim;
+                @Aim.performed += instance.OnAim;
+                @Aim.canceled += instance.OnAim;
+                @Fire.started += instance.OnFire;
+                @Fire.performed += instance.OnFire;
+                @Fire.canceled += instance.OnFire;
+                @Fire2.started += instance.OnFire2;
+                @Fire2.performed += instance.OnFire2;
+                @Fire2.canceled += instance.OnFire2;
+                @Dash.started += instance.OnDash;
+                @Dash.performed += instance.OnDash;
+                @Dash.canceled += instance.OnDash;
+                @GameMenu.started += instance.OnGameMenu;
+                @GameMenu.performed += instance.OnGameMenu;
+                @GameMenu.canceled += instance.OnGameMenu;
+                @SystemPause.started += instance.OnSystemPause;
+                @SystemPause.performed += instance.OnSystemPause;
+                @SystemPause.canceled += instance.OnSystemPause;
+            }
+        }
+    }
     public PlayerActions @Player => new PlayerActions(this);
     private int m_KeyboardMouseSchemeIndex = -1;
     public InputControlScheme KeyboardMouseScheme
@@ -516,7 +868,7 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
             return asset.controlSchemes[m_XBOX_ControllerSchemeIndex];
         }
     }
-    public interface IPlayerActions
+    public interface IPlayerInp_legacyActions
     {
         void OnMove(InputAction.CallbackContext context);
         void OnAim(InputAction.CallbackContext context);
@@ -527,5 +879,15 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
         void OnMenu(InputAction.CallbackContext context);
         void OnDash(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
+    }
+    public interface IPlayerActions
+    {
+        void OnMove(InputAction.CallbackContext context);
+        void OnAim(InputAction.CallbackContext context);
+        void OnFire(InputAction.CallbackContext context);
+        void OnFire2(InputAction.CallbackContext context);
+        void OnDash(InputAction.CallbackContext context);
+        void OnGameMenu(InputAction.CallbackContext context);
+        void OnSystemPause(InputAction.CallbackContext context);
     }
 }

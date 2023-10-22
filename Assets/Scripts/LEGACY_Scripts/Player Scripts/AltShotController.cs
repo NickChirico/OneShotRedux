@@ -15,8 +15,8 @@ public class AltShotController : MonoBehaviour
     public bool usingMouse;
 
     [Header("Components")]
-    private ShotController shot;
-    private MovementController move;
+    private ShotController_legacy shot;
+    private MovementController_legacy move;
     private AudioManager audioManager;
 
     [Header("Variable Stats")]
@@ -94,13 +94,13 @@ public class AltShotController : MonoBehaviour
         _altControl = this;
 
         inputActions = new PlayerInputActions();
-        inputActions.Player.Enable();
+        inputActions.PlayerInp_legacy.Enable();
     }
 
     void Start()
     {
-        move = MovementController.GetMoveController;
-        shot = ShotController.GetShotControl;
+        move = MovementController_legacy.GetMoveController;
+        shot = ShotController_legacy.GetShotControl;
         audioManager = AudioManager.GetAudioManager;
 
         reloadTimerAlt = altFireRate;
@@ -140,8 +140,8 @@ public class AltShotController : MonoBehaviour
         else
         {
             // Controller Controls
-            Vector2 aimVector = inputActions.Player.Aim.ReadValue<Vector2>();
-            Vector2 moveVector = inputActions.Player.Move.ReadValue<Vector2>();
+            Vector2 aimVector = inputActions.PlayerInp_legacy.Aim.ReadValue<Vector2>();
+            Vector2 moveVector = inputActions.PlayerInp_legacy.Move.ReadValue<Vector2>();
 
             if (aimVector.Equals(Vector2.zero))
             {

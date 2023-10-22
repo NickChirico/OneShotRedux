@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class PlayerState
+public abstract class PlayerState_legacy
 {
-    protected PlayerStateManager SM;
-    protected Player player;
-    protected MovementController Move;
-    protected ShotController Shot;
+    protected PlayerStateManager_legacy SM;
+    protected Player_legacy player;
+    protected MovementController_legacy Move;
+    protected ShotController_legacy Shot;
     protected AltShotController Alt;
     protected SpecialController Spec;
     protected MeleeController Melee;
@@ -21,11 +21,11 @@ public abstract class PlayerState
 
     protected float timer;
 
-    public PlayerState(PlayerStateManager manager, string name)
+    public PlayerState_legacy(PlayerStateManager_legacy manager, string name)
     {
-        InputAction = MovementController.GetInputActions;
-        Move = MovementController.GetMoveController;
-        Shot = ShotController.GetShotControl;
+        InputAction = MovementController_legacy.GetInputActions;
+        Move = MovementController_legacy.GetMoveController;
+        Shot = ShotController_legacy.GetShotControl;
         Alt = AltShotController.GetAltControl;
         Melee = MeleeController.GetMeleeControl;
         Spec = SpecialController.GetSpecialController;
@@ -33,11 +33,11 @@ public abstract class PlayerState
         Name = name;
     }
 
-    public PlayerState(PlayerStateManager manager, string name, float dur)
+    public PlayerState_legacy(PlayerStateManager_legacy manager, string name, float dur)
     {
-        InputAction = MovementController.GetInputActions;
-        Move = MovementController.GetMoveController;
-        Shot = ShotController.GetShotControl;
+        InputAction = MovementController_legacy.GetInputActions;
+        Move = MovementController_legacy.GetMoveController;
+        Shot = ShotController_legacy.GetShotControl;
         Alt = AltShotController.GetAltControl;
         Melee = MeleeController.GetMeleeControl;
         Spec = SpecialController.GetSpecialController;
@@ -45,11 +45,11 @@ public abstract class PlayerState
         Name = name;
         Duration = dur;
     }
-    public PlayerState(PlayerStateManager manager, Player p, string name, float dur)
+    public PlayerState_legacy(PlayerStateManager_legacy manager, Player_legacy p, string name, float dur)
     {
-        InputAction = MovementController.GetInputActions;
-        Move = MovementController.GetMoveController;
-        Shot = ShotController.GetShotControl;
+        InputAction = MovementController_legacy.GetInputActions;
+        Move = MovementController_legacy.GetMoveController;
+        Shot = ShotController_legacy.GetShotControl;
         Alt = AltShotController.GetAltControl;
         Melee = MeleeController.GetMeleeControl;
         Spec = SpecialController.GetSpecialController;
@@ -59,11 +59,11 @@ public abstract class PlayerState
         Duration = dur;
     }
 
-    public PlayerState(PlayerStateManager manager, string name, float dur, float prepDur, int interval)
+    public PlayerState_legacy(PlayerStateManager_legacy manager, string name, float dur, float prepDur, int interval)
     {
-        InputAction = MovementController.GetInputActions;
-        Move = MovementController.GetMoveController;
-        Shot = ShotController.GetShotControl;
+        InputAction = MovementController_legacy.GetInputActions;
+        Move = MovementController_legacy.GetMoveController;
+        Shot = ShotController_legacy.GetShotControl;
         Alt = AltShotController.GetAltControl;
         Melee = MeleeController.GetMeleeControl;
         Spec = SpecialController.GetSpecialController;

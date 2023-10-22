@@ -27,4 +27,5 @@ public abstract class OSWeapon
         * Fire the weapon's alternate shot
         */
     public abstract void AlternateFire();
+
 }

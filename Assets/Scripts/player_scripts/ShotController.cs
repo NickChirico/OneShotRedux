@@ -2,10 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShotControl : MonoBehaviour
+public class ShotController : MonoBehaviour
 {
-    public OSWeapon currentWeapon;
-
+    // Start is called before the first frame update
     void Start()
     {
         

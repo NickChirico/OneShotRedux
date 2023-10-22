@@ -9,8 +9,8 @@ public class EquipmentManager : MonoBehaviour
     public static EquipmentManager _instanceEquip;
     public static EquipmentManager GetEquipManager { get { return _instanceEquip; } }
 
-    MovementController MoveControl;
-    ShotController ShotControl;
+    MovementController_legacy MoveControl;
+    ShotController_legacy ShotControl;
     AltShotController AltFireControl;
     MeleeController MeleeControl;
     UI_Manager UIControl;
@@ -51,8 +51,8 @@ public class EquipmentManager : MonoBehaviour
     //  Start happens after everything's Awake()
     private void Start()
     {
-        MoveControl = MovementController.GetMoveController;
-        ShotControl = ShotController.GetShotControl;
+        MoveControl = MovementController_legacy.GetMoveController;
+        ShotControl = ShotController_legacy.GetShotControl;
         AltFireControl = AltShotController.GetAltControl;
         MeleeControl = MeleeController.GetMeleeControl;
         UIControl = UI_Manager.GetUIManager;

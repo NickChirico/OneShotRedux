@@ -13,15 +13,15 @@ public class DifferentPlayerStates : MonoBehaviour
  *      ?? check for input ==> Special ??
  *  No Duration;
  */
-public class PlayerState_Ready : PlayerState
+public class PlayerState_Ready : PlayerState_legacy
 {
     public override void DoState()
     {
         // READY : read inputs
-        float firePressed = InputAction.Player.Fire.ReadValue<float>(); // ~~~~~~~ InputAction ~~~ WORKS ~~~~~
-        float reloadPressed = InputAction.Player.Reload.ReadValue<float>();
-        float specPressed = InputAction.Player.Fire2.ReadValue<float>();
-        float dashPressed = InputAction.Player.Dash.ReadValue<float>();
+        float firePressed = InputAction.PlayerInp_legacy.Fire.ReadValue<float>(); // ~~~~~~~ InputAction ~~~ WORKS ~~~~~
+        float reloadPressed = InputAction.PlayerInp_legacy.Reload.ReadValue<float>();
+        float specPressed = InputAction.PlayerInp_legacy.Fire2.ReadValue<float>();
+        float dashPressed = InputAction.PlayerInp_legacy.Dash.ReadValue<float>();
 
         if (firePressed > 0)
         {
@@ -57,7 +57,7 @@ public class PlayerState_Ready : PlayerState
         base.Exit();
     }
 
-    public PlayerState_Ready(PlayerStateManager myManager, string myName) :
+    public PlayerState_Ready(PlayerStateManager_legacy myManager, string myName) :
         base(myManager, myName)
     {
     }
@@ -67,7 +67,7 @@ public class PlayerState_Ready : PlayerState
  *  Shooting the main Shot 
  *  last ShotDuration, then ==> Ready
  */
-public class PlayerState_Shooting : PlayerState
+public class PlayerState_Shooting : PlayerState_legacy
 {
     public override void DoState()
     {
@@ -118,7 +118,7 @@ public class PlayerState_Shooting : PlayerState
         base.Exit();
     }
 
-    public PlayerState_Shooting(PlayerStateManager myManager, string myName, float myDur) :
+    public PlayerState_Shooting(PlayerStateManager_legacy myManager, string myName, float myDur) :
         base(myManager, myName, myDur)
     {
     }
@@ -128,11 +128,11 @@ public class PlayerState_Shooting : PlayerState
  *  Using Alt Fire 
  *  last altDuration, then ==> Ready
  */
-public class PlayerState_AltFire : PlayerState
+public class PlayerState_AltFire : PlayerState_legacy
 {
     public override void DoState()
     {
-        float altFirePressed = InputAction.Player.Fire2.ReadValue<float>();
+        float altFirePressed = InputAction.PlayerInp_legacy.Fire2.ReadValue<float>();
 
         if (altFirePressed > 0)
         {
@@ -172,7 +172,7 @@ public class PlayerState_AltFire : PlayerState
         Move.SetAltHold(false);
     }
 
-    public PlayerState_AltFire(PlayerStateManager myManager, string myName) :
+    public PlayerState_AltFire(PlayerStateManager_legacy myManager, string myName) :
         base(myManager, myName)
     {
     }
@@ -182,7 +182,7 @@ public class PlayerState_AltFire : PlayerState
 //// ~~~~~~~~~~~~~~~~
 //// ~~~ SPECIAL ~~~~ --> completely remove AltControl
 //// ~~~~~~~~~~~~~~~~
-public class PlayerState_Special : PlayerState
+public class PlayerState_Special : PlayerState_legacy
 {
     float t1;
     float atimer;
@@ -193,7 +193,7 @@ public class PlayerState_Special : PlayerState
     bool canThrust = true;
     public override void DoState()
     {
-        float specialPressed = InputAction.Player.Fire2.ReadValue<float>();
+        float specialPressed = InputAction.PlayerInp_legacy.Fire2.ReadValue<float>();
 
         if (doArc)
         {
@@ -316,11 +316,11 @@ public class PlayerState_Special : PlayerState
     public override void Exit()
     {
         base.Exit();
-        Move.SetMoveType(MovementController.Movement.Normal);
+        Move.SetMoveType(MovementController_legacy.Movement.Normal);
         Spec.EndNimble();
     }
 
-    public PlayerState_Special(PlayerStateManager myManager, string myName) :
+    public PlayerState_Special(PlayerStateManager_legacy myManager, string myName) :
         base(myManager, myName)
     {
     }
@@ -331,13 +331,13 @@ public class PlayerState_Special : PlayerState
  *  last reloadDuration, then ==> Ready
  *  can Alt Fire from reload, but still have to reload ==> AltFire
  */
-public class PlayerState_Reloading : PlayerState
+public class PlayerState_Reloading : PlayerState_legacy
 {
     bool soundPlayed;
     public override void DoState()
     {
-        float dashPressed = InputAction.Player.Dash.ReadValue<float>();
-        float fire2Pressed = InputAction.Player.Dash.ReadValue<float>();
+        float dashPressed = InputAction.PlayerInp_legacy.Dash.ReadValue<float>();
+        float fire2Pressed = InputAction.PlayerInp_legacy.Dash.ReadValue<float>();
 
         if (dashPressed > 0 && Move.CanDash())
         {
@@ -386,19 +386,19 @@ public class PlayerState_Reloading : PlayerState
         Shot.UpdateAmmoUI();
     }
 
-    public PlayerState_Reloading(PlayerStateManager myManager, string myName, float myDur) :
+    public PlayerState_Reloading(PlayerStateManager_legacy myManager, string myName, float myDur) :
         base(myManager, myName, myDur)
     {
     }
 }
 
-public class PlayerState_Rechamber : PlayerState
+public class PlayerState_Rechamber : PlayerState_legacy
 {
     bool soundPlayed;
     public override void DoState()
     {
-        float altFirePressed = InputAction.Player.Fire2.ReadValue<float>();
-        float dashPressed = InputAction.Player.Dash.ReadValue<float>();
+        float altFirePressed = InputAction.PlayerInp_legacy.Fire2.ReadValue<float>();
+        float dashPressed = InputAction.PlayerInp_legacy.Dash.ReadValue<float>();
 
         if (altFirePressed > 0 && Alt.CanAltFire())
         {
@@ -443,14 +443,14 @@ public class PlayerState_Rechamber : PlayerState
         base.Exit();
     }
 
-    public PlayerState_Rechamber(PlayerStateManager myManager, string myName, float myDur) :
+    public PlayerState_Rechamber(PlayerStateManager_legacy myManager, string myName, float myDur) :
         base(myManager, myName, myDur)
     {
     }
 }
 
 // ~~~~~~~~ MELEE ~~~~~~~~
-public class PlayerState_MeleeAttack : PlayerState
+public class PlayerState_MeleeAttack : PlayerState_legacy
 {
     float atimer = 0;
     bool canThrust;
@@ -502,19 +502,19 @@ public class PlayerState_MeleeAttack : PlayerState
         base.Exit();
     }
 
-    public PlayerState_MeleeAttack(PlayerStateManager myManager, string myName) :
+    public PlayerState_MeleeAttack(PlayerStateManager_legacy myManager, string myName) :
         base(myManager, myName)
     {
     }
 }
 
-public class PlayerState_MeleeRecover : PlayerState
+public class PlayerState_MeleeRecover : PlayerState_legacy
 {
     public override void DoState()
     {
-        float firePressed = InputAction.Player.Fire.ReadValue<float>();
-        float fire2Pressed = InputAction.Player.Fire2.ReadValue<float>();
-        float dashPressed = InputAction.Player.Dash.ReadValue<float>();
+        float firePressed = InputAction.PlayerInp_legacy.Fire.ReadValue<float>();
+        float fire2Pressed = InputAction.PlayerInp_legacy.Fire2.ReadValue<float>();
+        float dashPressed = InputAction.PlayerInp_legacy.Dash.ReadValue<float>();
 
         timer += Time.deltaTime;
 
@@ -564,13 +564,13 @@ public class PlayerState_MeleeRecover : PlayerState
         base.Exit();
     }
 
-    public PlayerState_MeleeRecover(PlayerStateManager myManager, string myName, float myDur, float myPrep, int myInterval) :
+    public PlayerState_MeleeRecover(PlayerStateManager_legacy myManager, string myName, float myDur, float myPrep, int myInterval) :
         base(myManager, myName, myDur, myPrep, myInterval)
     {
     }
 }
 
-public class PlayerState_Dash : PlayerState
+public class PlayerState_Dash : PlayerState_legacy
 {
     public override void DoState()
     {
@@ -599,13 +599,13 @@ public class PlayerState_Dash : PlayerState
         base.Exit();
     }
 
-    public PlayerState_Dash(PlayerStateManager myManager, string myName, float myDur) :
+    public PlayerState_Dash(PlayerStateManager_legacy myManager, string myName, float myDur) :
         base(myManager, myName, myDur)
     {
     }
 }
 
-public class PlayerState_Damaged : PlayerState
+public class PlayerState_Damaged : PlayerState_legacy
 {
     public override void DoState()
     {
@@ -635,7 +635,7 @@ public class PlayerState_Damaged : PlayerState
         base.Exit();
     }
 
-    public PlayerState_Damaged(PlayerStateManager myManager, Player p, string myName, float myDur) :
+    public PlayerState_Damaged(PlayerStateManager_legacy myManager, Player_legacy p, string myName, float myDur) :
         base(myManager, p, myName, myDur)
     {
     }

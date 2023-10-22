@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MovementController : MonoBehaviour
+public class MovementController_legacy : MonoBehaviour
 {
-    public static MovementController _moveControl;
-    public static MovementController GetMoveController { get { return _moveControl; } }
+    public static MovementController_legacy _moveControl;
+    public static MovementController_legacy GetMoveController { get { return _moveControl; } }
 
     private static PlayerInputActions playerInputActions;
     public static PlayerInputActions GetInputActions { get { return playerInputActions; } }
@@ -68,7 +68,7 @@ public class MovementController : MonoBehaviour
         _moveControl = this;
 
         playerInputActions = new PlayerInputActions();
-        playerInputActions.Player.Enable();
+        playerInputActions.PlayerInp_legacy.Enable();
     }
 
     /*private void Movement_performed(InputAction.CallbackContext context)
@@ -93,7 +93,7 @@ public class MovementController : MonoBehaviour
     // **FIXED UPDATE**
     private void FixedUpdate()
     {
-        Vector2 inputVector = playerInputActions.Player.Move.ReadValue<Vector2>();
+        Vector2 inputVector = playerInputActions.PlayerInp_legacy.Move.ReadValue<Vector2>();
 
         if (recoilTimer < recoilDuration)
         {

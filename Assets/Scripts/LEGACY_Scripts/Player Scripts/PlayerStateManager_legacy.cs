@@ -2,41 +2,41 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerStateManager : MonoBehaviour
+public class PlayerStateManager_legacy : MonoBehaviour
 {
-    [SerializeField] private PlayerState currentState;
-    protected static PlayerStateManager this_SM;
-    protected static MovementController MoveControl;
-    protected static ShotController ShotControl;
+    [SerializeField] private PlayerState_legacy currentState;
+    protected static PlayerStateManager_legacy this_SM;
+    protected static MovementController_legacy MoveControl;
+    protected static ShotController_legacy ShotControl;
     protected static AltShotController AltControl;
     //protected static EquipmentManager EquipControl;
     protected static MeleeController MeleeControl;
     protected static WeaponManager WeaponControl;
-    protected static Player this_Player;
+    protected static Player_legacy this_Player;
 
-    public PlayerState Ready;
-    public PlayerState Shooting;
-    public PlayerState Dashing;
-    public PlayerState AltFiring;
-    public PlayerState Reloading;
-    public PlayerState Rechamber;
-    public PlayerState Special;
-    public PlayerState Damaged;
+    public PlayerState_legacy Ready;
+    public PlayerState_legacy Shooting;
+    public PlayerState_legacy Dashing;
+    public PlayerState_legacy AltFiring;
+    public PlayerState_legacy Reloading;
+    public PlayerState_legacy Rechamber;
+    public PlayerState_legacy Special;
+    public PlayerState_legacy Damaged;
 
-    public PlayerState MeleeAttack;
-    public PlayerState Attack1;
-    public PlayerState Attack2;
-    public PlayerState Attack3;
-    public PlayerState AttackRecover;
+    public PlayerState_legacy MeleeAttack;
+    public PlayerState_legacy Attack1;
+    public PlayerState_legacy Attack2;
+    public PlayerState_legacy Attack3;
+    public PlayerState_legacy AttackRecover;
 
     bool isActive;
 
     void Start()
     {
         this_SM = this;
-        this_Player = this.GetComponent<Player>();
-        MoveControl = this.GetComponent<MovementController>();
-        ShotControl = this.GetComponent<ShotController>();
+        this_Player = this.GetComponent<Player_legacy>();
+        MoveControl = this.GetComponent<MovementController_legacy>();
+        ShotControl = this.GetComponent<ShotController_legacy>();
         AltControl = this.GetComponent<AltShotController>();
         //EquipControl = FindObjectOfType<EquipmentManager>();
         WeaponControl = FindObjectOfType<WeaponManager>();
@@ -73,7 +73,7 @@ public class PlayerStateManager : MonoBehaviour
             currentState.DoState();
     }
 
-    public void ChangeState(PlayerState newState)
+    public void ChangeState(PlayerState_legacy newState)
     {
         if (currentState != null)
             currentState.Exit();
@@ -81,7 +81,7 @@ public class PlayerStateManager : MonoBehaviour
         currentState.Enter();
     }
 
-    public PlayerState GetCurrentState()
+    public PlayerState_legacy GetCurrentState()
     {
         return currentState;
     }

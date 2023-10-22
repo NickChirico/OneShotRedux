@@ -223,7 +223,7 @@ public abstract class Enemy : MonoBehaviour
     {
         if (coll.gameObject.CompareTag("Player"))
         {
-            Player player = coll.gameObject.GetComponent<Player>();
+            Player_legacy player = coll.gameObject.GetComponent<Player_legacy>();
             if (player.CanBeDamaged() && SM.GetCurrentState() != SM.Knocked) // PLayer can be damaged and enemy is not in "Knocked"
             {
                 if (SM.GetCurrentState() == SM.Attack)

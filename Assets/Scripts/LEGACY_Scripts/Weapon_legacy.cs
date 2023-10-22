@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Weapon : MonoBehaviour
+public abstract class Weapon_legacy : MonoBehaviour
 {
     public string weaponName;
 
     //public abstract Weapon GetThisWeapon();
 }
 
-public class RangedWeapon : Weapon
+public class RangedWeapon : Weapon_legacy
 {
     [Space(5)]
     public int shotDamage;
@@ -52,7 +52,7 @@ public class RangedWeapon : Weapon
 }
 
 
-    public class MeleeWeapon : Weapon
+    public class MeleeWeapon : Weapon_legacy
 {
     [Space(5)]
     public int intervalCount; // -1 for infinite

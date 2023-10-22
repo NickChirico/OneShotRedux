@@ -19,7 +19,7 @@ public class PauseController : MonoBehaviour
         _pauseControl = this;
 
         inputActions = new PlayerInputActions();
-        inputActions.Player.Enable();
+        inputActions.PlayerInp_legacy.Enable();
     }
     private void Start()
     {

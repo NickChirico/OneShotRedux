@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Player_legacy : MonoBehaviour
 {
     public SpriteRenderer sp;
-    PlayerStateManager SM;
+    PlayerStateManager_legacy SM;
     UI_Manager ui;
 
     public PopUpDamageText damageText;
@@ -24,7 +24,7 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
-        SM = this.GetComponent<PlayerStateManager>();
+        SM = this.GetComponent<PlayerStateManager_legacy>();
     }
     void Start()
     {

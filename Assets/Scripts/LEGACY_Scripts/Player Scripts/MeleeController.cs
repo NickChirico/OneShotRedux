@@ -10,7 +10,7 @@ public class MeleeController : MonoBehaviour
     private PlayerInputActions playerInputActions;
 
     [Header("Components")]
-    private MovementController moveController;
+    private MovementController_legacy moveController;
     private AudioManager audioManager;
 
     [Header("GAME OPTIONS")]
@@ -70,11 +70,11 @@ public class MeleeController : MonoBehaviour
     {
         _meleeControl = this;
         playerInputActions = new PlayerInputActions();
-        playerInputActions.Player.Enable();
+        playerInputActions.PlayerInp_legacy.Enable();
     }
     void Start()
     {
-        moveController = MovementController.GetMoveController;
+        moveController = MovementController_legacy.GetMoveController;
         audioManager = AudioManager.GetAudioManager;
 
         //attackDuration1 = thrustDuration_1 + preAttackDelay_1;
@@ -143,8 +143,8 @@ public class MeleeController : MonoBehaviour
         else
         {
             // Controller Controls
-            Vector2 aimVector = playerInputActions.Player.Aim.ReadValue<Vector2>();
-            Vector2 moveVector = playerInputActions.Player.Move.ReadValue<Vector2>();
+            Vector2 aimVector = playerInputActions.PlayerInp_legacy.Aim.ReadValue<Vector2>();
+            Vector2 moveVector = playerInputActions.PlayerInp_legacy.Move.ReadValue<Vector2>();
 
             if (aimVector.Equals(Vector2.zero))
             {

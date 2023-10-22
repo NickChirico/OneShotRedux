@@ -13,11 +13,11 @@ public class UI_Manager : MonoBehaviour
 
     private PlayerInputActions playerInputActions;
 
-    MovementController move;
-    ShotController shot;
+    MovementController_legacy move;
+    ShotController_legacy shot;
     AltShotController alt;
     MeleeController melee;
-    PlayerStateManager SM;
+    PlayerStateManager_legacy SM;
 
     EquipmentManager Equipment;
     PauseController pause;
@@ -84,15 +84,15 @@ public class UI_Manager : MonoBehaviour
     {
         _uiControl = this;
         playerInputActions = new PlayerInputActions();
-        playerInputActions.Player.Enable();
+        playerInputActions.PlayerInp_legacy.Enable();
     }
     private void Start()
     {
-        move = MovementController.GetMoveController;
-        shot = ShotController.GetShotControl;
+        move = MovementController_legacy.GetMoveController;
+        shot = ShotController_legacy.GetShotControl;
         alt = AltShotController.GetAltControl;
         melee = MeleeController.GetMeleeControl;
-        SM = FindObjectOfType<PlayerStateManager>();
+        SM = FindObjectOfType<PlayerStateManager_legacy>();
 
         Equipment = EquipmentManager.GetEquipManager;
         pause = PauseController.GetPauseController;
@@ -118,7 +118,7 @@ public class UI_Manager : MonoBehaviour
         //manaBar.fillAmount = Mathf.Lerp(manaBar.fillAmount, alt.currentMana / alt.maxMana, Time.deltaTime * 8);
 
         // ~~~ Menu (*select)
-        float menuPressed = playerInputActions.Player.Menu.ReadValue<float>();
+        float menuPressed = playerInputActions.PlayerInp_legacy.Menu.ReadValue<float>();
 
         if (menuPressed > 0 && !PausePanel.activeSelf && !SettingsPanel.activeSelf) // open EQUIP if PAUSE && SETTINGS are NOT open
         {
@@ -134,7 +134,7 @@ public class UI_Manager : MonoBehaviour
                 pressedM = !pressedM;
         }
         // ~~~ Pause (*start)
-        float pausePressed = playerInputActions.Player.Pause.ReadValue<float>();
+        float pausePressed = playerInputActions.PlayerInp_legacy.Pause.ReadValue<float>();
         if (pausePressed > 0)
         {
             if (pressedP)

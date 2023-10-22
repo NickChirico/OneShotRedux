@@ -8,7 +8,7 @@ public class StateManagerDisplay : MonoBehaviour
     TextMeshPro display;
     public bool isEnemy;
     EnemyStateManager enemyManager;
-    PlayerStateManager playerManager;
+    PlayerStateManager_legacy playerManager;
 
     void Start()
     {
@@ -16,7 +16,7 @@ public class StateManagerDisplay : MonoBehaviour
         if(isEnemy)
             enemyManager = GetComponentInParent<EnemyStateManager>();
         else
-            playerManager = GetComponentInParent<PlayerStateManager>();
+            playerManager = GetComponentInParent<PlayerStateManager_legacy>();
     }
 
     void Update()

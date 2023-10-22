@@ -7,8 +7,8 @@ public class WeaponManager : MonoBehaviour
     public static WeaponManager _weapManager;
     public static WeaponManager GetWeaponManager { get { return _weapManager; } }
 
-    MovementController MoveControl;
-    ShotController ShotControl;
+    MovementController_legacy MoveControl;
+    ShotController_legacy ShotControl;
     MeleeController MeleeControl;
     SpecialController SpecControl;
     UI_Manager UIControl;
@@ -41,8 +41,8 @@ public class WeaponManager : MonoBehaviour
 
     private void Start()
     {
-        MoveControl = MovementController.GetMoveController;
-        ShotControl = ShotController.GetShotControl;
+        MoveControl = MovementController_legacy.GetMoveController;
+        ShotControl = ShotController_legacy.GetShotControl;
         SpecControl = SpecialController.GetSpecialController;
         MeleeControl = MeleeController.GetMeleeControl;
         UIControl = UI_Manager.GetUIManager;

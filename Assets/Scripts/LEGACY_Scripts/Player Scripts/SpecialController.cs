@@ -7,10 +7,10 @@ public class SpecialController : MonoBehaviour
     public static SpecialController _specControl;
     public static SpecialController GetSpecialController { get { return _specControl; } }
 
-    ShotController ShotControl;
+    ShotController_legacy ShotControl;
     MeleeController MeleeControl;
-    MovementController MoveControl;
-    Player player;
+    MovementController_legacy MoveControl;
+    Player_legacy player;
 
     public GameObject mortarAimIndicator;
     public AnimationCurve aimCurve_arc;
@@ -43,14 +43,14 @@ public class SpecialController : MonoBehaviour
     private void Awake()
     {
         _specControl = this;
-        player = this.GetComponent<Player>();
+        player = this.GetComponent<Player_legacy>();
     }
 
     private void Start()
     {
-        ShotControl = ShotController.GetShotControl;
+        ShotControl = ShotController_legacy.GetShotControl;
         MeleeControl = MeleeController.GetMeleeControl;
-        MoveControl = MovementController.GetMoveController;
+        MoveControl = MovementController_legacy.GetMoveController;
 
     }
     private void Update()
