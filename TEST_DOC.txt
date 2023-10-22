@@ -1,0 +1,4 @@
+# This is a txt document
+# Made in vim
+# Made manually on branch 'initialSetup'
+# testing committing to git from the command line
