@@ -114,7 +114,7 @@ public class ShotController : MonoBehaviour
         hasShot = true;
 
         currentAmmo = ammoCapacity;
-        uiControl.UpdateAmmo(currentAmmo, ammoCapacity);
+        uiControl.UpdateAmmo(currentAmmo, ammoCapacity);    
     }
 
     public bool HasShot()
